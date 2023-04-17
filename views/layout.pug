@@ -6,17 +6,15 @@ html
     meta(name="viewport", content="width=device-width, initial-scale=1")
     link(rel="stylesheet", href="/stylesheets/style.css")
   body
-    //- nav.top-navbar
-    //-   block navbar
-    //-     h4 This is the navbar
-
     .container
       block sidebar
         .sidebar
-          header 
-            img(src='/images/fish_logo.png' alt='Logo' style='width:150px;height:150px')
-              //- include ../public/images/fish_logo.jpg
-            
+          header
+            img(
+              src="/images/fish_logo.png",
+              alt="Logo",
+              style="width: 150px; height: 150px"
+            )
 
           ul.sidebar-menu
             li
@@ -28,6 +26,8 @@ html
 
             li
               a(href="") 
+                |
+                |
                 |
                 svg.icon(width="16px", height="16px")
                   include ../public/images/fmcg-products-icon.svg
@@ -52,20 +52,26 @@ html
         block content
 
       .rightbar
-        p This Inventory Management was made by 
-          a(href='https://github.com/flaviovisnardifilho') me
-          |, using Express, MongoDb.
-        p You can find the code 
-          a(href='https://github.com/flaviovisnardifilho/inventory_management') here
-          |.
-        p The animations of the menu are a simplification from 
-          a(href='https://codepen.io/rizkykurniawanritonga/pen/VwvOMW?editors=1100') this codepen
-          |  by 
-          a(href='https://codepen.io/rizkykurniawanritonga') Rizky Kurniawan Ritonga
+        p This Inventory Management was made by
+          |
+          a(href="https://github.com/flaviovisnardifilho") me
+          | , using Express, MongoDb.
+        p You can find the code
+          |
+          a(href="https://github.com/flaviovisnardifilho/inventory_management") here
           | .
-        p The logo came from 
-          a(href='https://www.bluewillow.ai/') BlueWillow
+        p The animations of the menu are a simplification from
+          |
+          a(
+            href="https://codepen.io/rizkykurniawanritonga/pen/VwvOMW?editors=1100"
+          ) this codepen
+          |
+          | by
+          a(href="https://codepen.io/rizkykurniawanritonga") Rizky Kurniawan Ritonga
           | .
-
+        p The logo came from
+          |
+          a(href="https://www.bluewillow.ai/") BlueWillow
+          | .
 
         block rightbar
