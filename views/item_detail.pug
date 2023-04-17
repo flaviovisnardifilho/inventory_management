@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 Item: #{ item.name }
+
+  h3 Category: #{ item.category.name }
+
+  p #{ item.description }
+
+  p Price: $ #{ item.price }
+
+  p Stock: #{ item.stock } #{ item.unit }
+
+  p Item create at: #{ item.create_at }
+
+  hr
+  p
+    a(href=item.url + "/delete") Delete Item
+  p
+    a(href=item.url + "/update") Update Item

@@ -1,0 +1,84 @@
+extends layout
+
+block content
+  form(method="POST", action="")
+    .form-input
+      label(for="name") Name:
+      input#name(
+        type="text",
+        placeholder="Item name",
+        name="name",
+        required="true",
+        value=undefined === item ? "" : item.name
+      )
+
+    .form-input
+      label(for="description") Description:
+      input#description(
+        type="text",
+        placeholder="About the Item",
+        name="description",
+        required="true",
+        value=undefined === item ? "" : item.description
+      )
+
+    .form-input
+      label(for="price") Price:
+      input#price(
+        type="number",
+        placeholder="$",
+        name="price",
+        required="true",
+        value=undefined === item ? "" : item.price
+      )
+
+    .form-input
+      label(for="stock") Stock:
+      input#stock(
+        type="number",
+        placeholder="Ex: 35",
+        name="stock",
+        required="true",
+        value=undefined === item ? "" : item.stock
+      )
+
+    .form-input
+      label(for="unit") Unit:
+      select#unit(
+        type="select",
+        placeholder="Select Unit",
+        name="unit",
+        required="true"
+      )
+        each un in ["Kg", "Un", "Box", "L"]
+          option(value=val) #{ un }
+
+    .form-input
+      label(for="cost") Cost:
+      input#cost(
+        type="number",
+        placeholder="$",
+        name="cost",
+        required="true",
+        value=undefined === item ? "" : item.cost
+      )
+
+    .form-input
+      label(for="category") Category:
+      select#select(
+        type="select",
+        placeholder="Select Category",
+        name="category",
+        required="true"
+      )
+        //- - categories = [...new Set(categories)]
+        each category in categories
+          option(value=category._id) #{ category.name }
+
+    button(type="submit") Submit
+
+  if errors
+    ul
+      each error in errors
+        li!= error.msg
+        

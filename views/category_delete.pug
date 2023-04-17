@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 #{ title }
+
+  h2 #[strong #{ category.name }]
+
+  p #[strong #{ category.description }]
+
+  p Do you really want to delete this Category?
+    form(method="POST", action="")
+      .form-group 
+      input#categoryid.form-control(
+        type="hidden",
+        name="categoryid",
+        required="true",
+        value=category._id
+      )
+
+      button(type="submit") Delete
