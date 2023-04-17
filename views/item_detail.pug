@@ -1,11 +1,11 @@
 extends layout
 
 block content
-  h1 Item: #{ item.name }
+  h1.title Item: #{ item.name }
 
   h3 Category: #{ item.category.name }
 
-  p #{ item.description }
+  p.description #{ item.description }
 
   p Price: $ #{ item.price }
 
@@ -14,7 +14,8 @@ block content
   p Item create at: #{ item.create_at }
 
   hr
-  p
-    a(href=item.url + "/delete") Delete Item
-  p
-    a(href=item.url + "/update") Update Item
+  .buttons-container
+    p
+      a.delete(href=item.url + "/delete") Delete Item
+    p
+      a.update(href=item.url + "/update") Update Item

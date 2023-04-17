@@ -3,11 +3,12 @@ extends layout
 block content
   //- h1 = title 
 
-  h2 #{ category.name }
-  p  #{ category.description }
+  h1.title #{ category.name }
+  p.description  #{ category.description }
 
   hr
-  p
-    a(href=category.url + "/delete") Delete Category
-  p
-    a(href=category.url + "/update") Update Category
+  .buttons-container
+    p
+      a.delete(href=category.url + "/delete") Delete Category
+    p
+      a.update(href=category.url + "/update") Update Category
