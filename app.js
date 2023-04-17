@@ -5,13 +5,17 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
 const indexRouter = require("./routes/index");
-// const usersRouter = require("./routes/users");
 const itemsRouter = require("./routes/item");
 const categoryRouter = require("./routes/category");
-const compression = require('compression');
 
+const mongoose = require("mongoose");
+const compression = require("compression");
+const helmet = require("helmet");
 
 const app = express();
+
+// Add helmet to the middleware chain.
+app.use(helmet())
 
 // Set up rate limite: maximum of twenty requests per minute
 const RateLimit = require("express-rate-limit");
@@ -20,11 +24,8 @@ const limiter = RateLimit({
   max: 20,
 });
 // Apply rate limiter to all requests
-// app.use(limiter);
+app.use(limiter);
 
-const mongoose = require("mongoose");
-// const compression = require("compression");
-// const helmet = require("helmet");
 
 require("dotenv").config();
 
