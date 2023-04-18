@@ -235,6 +235,11 @@ hr {
   color: var(--color-idle);
 }
 
+.rightbar p a {
+  text-transform: uppercase;
+  color: black
+}
+
 /* ANIMATIONS */
 @keyframes moveToTop {
   from {
