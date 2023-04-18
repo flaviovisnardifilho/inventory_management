@@ -7,10 +7,10 @@ html,
 body {
   --color-idle: #f0f9ff;
   --color-active: #0ea5e9;
-  /* --color-active: #EAB308; */
   --color-disabled: #cccccf;
   --color-menu-background: #075985;
   --color-background: #1c1f20;
+  --color-focus: yellow;
 
   background-color: var(--color-menu-background);
 }
@@ -21,7 +21,6 @@ ul {
 
 .container {
   min-height: 100vh;
-
   display: flex;
   flex-flow: row wrap;
   row-gap: 0;
@@ -35,7 +34,6 @@ ul {
   background-color: var(--color-background);
   padding: 2em 1em;
   color: var(--color-idle);
-
   padding: 2em 2em;
 }
 .content .title {
@@ -48,8 +46,8 @@ ul {
   color: --var(--color-active);
 }
 .content ul li a {
-  color: white;
-  font-family: helvetica;
+  color: var(--color-idle);
+  font-family: helvetica; 
   text-decoration: none;
   text-transform: uppercase;
   line-height: 140%;
@@ -59,18 +57,37 @@ ul {
 }
 
 .content ul li a:active {
-  color: yellow;
+  color: var(--color-focus);
 }
-.content h3 {
+.content h2 {
   line-height: 140%;
   font-size: 1.5rem;
   text-transform: uppercase;
 }
 .content .description {
   line-height: 140%;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin-bottom: 2em;
 }
+.content-text {
+  line-height: 160%;
+  font-size: 1.25rem;
+}
+
+.form-group {
+  line-height: 160%;
+  font-size: 1.25em;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1.25em;
+}
+.form-group input,
+select {
+  width: 70%;
+  padding-left: 1em;
+  font-size: 1.25rem;
+}
+
 .buttons-container {
   display: flex;
   justify-content: space-around;
@@ -78,8 +95,9 @@ ul {
 }
 
 .delete,
-.update {
-  color: white;
+.update,
+.submit {
+  color: var(--color-idle);
   padding: 1em 1.5em;
   text-decoration: none;
   text-transform: uppercase;
@@ -88,22 +106,31 @@ ul {
   border-radius: 8px;
 }
 
+.submit {
+  background-color: var(--color-menu-background);
+}
+
 .delete:hover,
-.update:hover {
+.update:hover,
+.submit:hover {
   background-color: #555;
   cursor: pointer;
 }
 
 .delete:active,
-.update:active {
+.update:active,
+.submit:active {
   background-color: black;
+}
+
+hr {
+  margin: 2em 0;
 }
 
 /* SIDEBAR */
 .content ul li a:focus {
   color: yellow;
 }
-
 .sidebar {
   margin: 0 0 0 0;
   padding: 1em 4px;
@@ -121,11 +148,9 @@ ul {
   margin: 0;
   justify-self: end;
 }
-
 .sidebar-menu li {
   position: relative;
 }
-
 .sidebar-menu li a {
   text-decoration: none;
   padding: 0.75rem 1.25rem;
@@ -138,7 +163,6 @@ ul {
   display: flex;
   gap: 0.5rem;
 }
-
 /* SIDEBAR ICONS */
 .icon {
   fill: var(--color-idle);
@@ -147,7 +171,6 @@ ul {
   fill: var(--color-active);
   animation: moveToTop 230ms ease-in-out;
 }
-
 /* MENU STRONG */
 .sidebar-menu li a strong {
   text-transform: uppercase;
@@ -180,7 +203,6 @@ ul {
   top: 0px;
   border-left: 2px solid var(--color-active);
 }
-
 /* ARROW */
 .sidebar-menu li ul:before {
   content: "";
@@ -192,7 +214,6 @@ ul {
   border-top: 4px solid transparent;
   z-index: 5;
 }
-
 .sidebar-menu li:hover > ul {
   opacity: 1;
   visibility: visible;
@@ -209,6 +230,7 @@ ul {
 }
 .rightbar p {
   padding: 0.5em;
+  color: var(--color-idle);
 }
 
 /* ANIMATIONS */

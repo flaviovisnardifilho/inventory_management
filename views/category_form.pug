@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  h1.title= title 
   form(method="POST", action="")
     .form-group
       label(for="category_name") Name:
@@ -21,7 +22,9 @@ block content
         required="true",
         value=undefined === category ? "" : category.description
       )
-    button(type="submit") Submit
+
+    hr
+    button.submit(type="submit") Submit
 
   if errors
     ul

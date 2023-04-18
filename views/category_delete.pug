@@ -1,13 +1,14 @@
 extends layout
 
 block content
-  h1 #{ title }
+  h1.title #{ title }
 
-  h2 #[strong #{ category.name }]
+  .content-text
+    h2 #[strong #{ category.name }]
+    p #[strong #{ category.description }]
 
-  p #[strong #{ category.description }]
-
-  p Do you really want to delete this Category?
+  hr
+  p.confirm-delete Do you really want to delete this Category?
     form(method="POST", action="")
       .form-group 
       input#categoryid.form-control(
@@ -17,4 +18,4 @@ block content
         value=category._id
       )
 
-      button(type="submit") Delete
+      button.submit(type="submit") Delete

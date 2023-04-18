@@ -5,17 +5,18 @@ block content
 
   h2 Item: #{ item.name }
 
-  p #{ item.description }
+  .content-text
+    h3 #{ item.description }
 
-  h3 Category: #{ item.category.name }
-  p Price: $ #{ item.price }
+    p Category: #{ item.category.name }
+    p Price: $ #{ item.price }
 
-  p Stock: #{ item.stock } #{ item.unit }
+    p Stock: #{ item.stock } #{ item.unit }
 
-  p Item create at: #{ item.create_at }
+    p Item create at: #{ item.dates_ISOformatted }
 
-  hr
-  p Do you really want to delete this Item?
+    hr
+    p.confirm-delete Do you really want to delete this Item?
   form(method="POST", action="")
     .form-group 
     input#itemid.form-control(
@@ -25,4 +26,4 @@ block content
       value=item._id
     )
 
-    button(type="submit") Delete
+    button.submit(type="submit") Delete
