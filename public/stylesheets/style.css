@@ -107,7 +107,8 @@ select {
 }
 
 .submit {
-  background-color: var(--color-menu-background);
+  /* background-color: var(--color-menu-background); */
+  background-color: #1c1f20;
 }
 
 .delete:hover,
