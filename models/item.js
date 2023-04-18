@@ -1,3 +1,4 @@
+const { DateTime } = require("luxon");
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
@@ -26,6 +27,10 @@ const ItemSchema = new Schema({
 
 ItemSchema.virtual("url").get(function () {
   return `/item/${this._id}`;
+});
+
+ItemSchema.virtual("dates_ISOformatted").get(function () {
+  return DateTime.fromJSDate(this.create_at).toISODate();
 });
 
 module.exports = mongoose.model("Item", ItemSchema);
