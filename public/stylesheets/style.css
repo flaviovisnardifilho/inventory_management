@@ -228,6 +228,7 @@ hr {
 .rightbar {
   padding: 3em 1em;
   background-color: var(--color-menu-background);
+  line-height: 160%;
 }
 .rightbar p {
   padding: 0.5em;
